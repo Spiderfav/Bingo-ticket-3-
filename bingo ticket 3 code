@@ -1,0 +1,29 @@
+import random
+#Creates a 9 times 3 list called ticket
+ticket = [[0 for uy in range(3)]for x in range(9)]
+#Declares that column is an empty list 
+column = []
+#The for loop is used to count the tickets
+for x in range(0,9):
+    #Creates a variable named lowest_number to times 10 and plus 1
+    lowest_number = (x*10)+1
+    #Creates a vatiable named highest_number to times 10 and plus 10
+    highest_number = (x*10)+10
+    for y in range(0,3):
+        unique = False
+        while unique == False:
+            number = random.randint(lowest_number,highest_number)
+            if number not in column:
+                unique = True
+            column.append(number)
+            column.sort()
+            for y in range(0,3):
+                ticket = column
+                column.clear()
+print("Bingo ticket:")
+for y in range(0,3):
+    print("I",end="")
+    for x in range(0,3):
+        number = "{:02}".format(ticket[x][y])
+        print("I",end="")
+    print("")
